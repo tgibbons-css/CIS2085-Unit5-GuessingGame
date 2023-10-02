@@ -1,21 +1,29 @@
 package guessinggame;
 
+import java.util.Random;
 import java.util.Scanner;
 
-public class GuessingGame
+
+/**
+ *  While loop example completed
+ */
+public class GuessingGame_WhileLoop
 {
     public static void main(String[] args)
     {
         // Welcome user.
+        System.out.println("============ While Loop Example ============");
         System.out.println("Welcome!  The object of this game is to guess the number I am thinking of between 1 and 100.");
         System.out.println();
         Scanner input = new Scanner(System.in);
         
-        // Generate secret number.
-        //int secretNumber = (int) (Math.random() * 100) + 1;
+        int secretNumber;
+        // Generate secret number with either Math.random() or Random.nextInt()
+        secretNumber = (int) (Math.random() * 100) + 1;     // Generate numbers between 1 and 100 using Math.random()
         // 100 - the number of numbers we need in our range.
         // 1 - shifts the range of numbers up or down the number line.
-        int secretNumber = (int) (Math.random() * 101) + 100; // Generate numbers between 100 and 200.
+        Random random = new Random();
+        secretNumber = random.nextInt(100) + 1;             // Generate numbers between 1 and 100 using Random.nextInt()
         
         // Get user's guess.
         System.out.print("What is your guess? ");
